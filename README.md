@@ -37,14 +37,16 @@ Input & Output Specification
 ---------------------------------------------
 
 Input reference (backbone) tree must be in newick format. APPLES can perform placements based on PHYLIP alignments or a distance table.
-#### Input an alignment 
-The first `k` entry of the input alignment must be the `k` query sequences that will be placed. All species in the backbone tree must have a corresponding sequence in the alignment. You can find an example distance matrix for ten query sequences under [data/aln.phy](data/aln.phy).
+#### Input: an alignment 
+The first `k` entry of the input alignment must be the `k` query sequences that will be placed and the rest should be sequences in the tree. All species in the backbone tree must have a corresponding sequence in the alignment. You can find an example distance matrix for ten query sequences under [data/aln.phy](data/aln.phy).
 
 You can run APPLES with the following command on the example input alignment dataset:
 
 `python3 apples.py -a data/aln.phy -t data/backbone.nwk -P 10`
 
-#### Input a distance matrix
+Here, `-P 10` tells APPLES that `k=10`; i.e., the first 10 sequences in the alignment file are query sequences. 
+
+#### Input: a distance matrix
 The format for distance matrix is a tab delimited csv file with column and row headers. You can find an example distance matrix for ten query sequences under [data/dist.mat](data/dist.mat).
 You can run APPLES on the example distance matrix by running the following command:
 
